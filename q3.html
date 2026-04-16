@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>html</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        p{
+            text-align: left;
+            margin-left: 100;
+        }
+        .Next{
+            text-align: left;
+            margin-left: 260;
+        }
+        button{
+            background-color: skyblue;
+        }
+    </style>
+    <body>
+        <div class="form-box">
+            <center>
+                <h1>TEST</h1>
+                <h2>Question 3</h2>
+                <label>How many weeks in year ?</label>
+                <p>
+                <input type="radio" name="q3" value="(a)50">(a)50<br>
+                <input type="radio" name="q3" value="(b)20">(b)20<br>
+                <input type="radio" name="q3" value="(c)55">(c)55<br>
+                <input type="radio" name="q3" value="(d)52">(d)52<br>
+                </p>
+                </center>
+                <button onclick="back()" class="Back">BACK</button>
+            <button onclick="submit()" class="Next">SUBMIT</button>
+ 
+
+        </div>
+        <script>
+            function back(){
+                window.location.href="q2.html"
+            }
+            function submit(){
+            let ans = document.querySelector('input[name="q3"]:checked');
+
+            if(ans){
+              sessionStorage.setItem("q3", ans.value);
+              window.location.href = "result.html";
+            } else {
+              alert("Please select an option");
+        }
+}
+        </script>
+    </body>
