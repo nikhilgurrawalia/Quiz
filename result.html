@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>html</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        td{
+            text-align: center;
+        }
+        
+    </style>
+    <body>
+        <div class="form-box">
+            <center>RESULT</center>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Question </th>
+                    <th>Your Answer</th>
+                    <th>Correct Answer</th>
+                    <th>Mark</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>   1</td>
+                    <td id="r1"></td>
+                    <td>(c)365</td>
+                    <td id="a1"></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>   2</td>
+                    <td id="r2"></td>
+                    <td>(d)12</td>
+                    <td id="a2"></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>   3</td>
+                    <td id="r3"></td>
+                    <td>(d)52</td>
+                    <td id="a3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="result"></p>
+        </div>
+        <script>
+let score = 0;
+
+// Q1
+let d1 = sessionStorage.getItem("q1");
+document.getElementById("r1").innerHTML = d1;
+
+if(d1 == "(c)365"){
+    document.getElementById("a1").innerHTML = "1";
+    document.getElementById("r1").style.color = "green";
+    score++;
+}else{
+    document.getElementById("a1").innerHTML = "0";
+    document.getElementById("r1").style.color = "red";
+}
+
+// Q2
+let d2 = sessionStorage.getItem("q2");
+document.getElementById("r2").innerHTML = d2;
+
+if(d2 == "(d)12"){
+    document.getElementById("a2").innerHTML = "1";
+    document.getElementById("r2").style.color = "green";
+    score++;
+}else{
+    document.getElementById("a2").innerHTML = "0";
+    document.getElementById("r2").style.color = "red";
+}
+
+// Q3
+let d3 = sessionStorage.getItem("q3");
+document.getElementById("r3").innerHTML = d3;
+
+if(d3 == "(d)52"){
+    document.getElementById("a3").innerHTML = "1";
+    document.getElementById("r3").style.color = "green";
+    score++;
+}else{
+    document.getElementById("a3").innerHTML = "0";
+    document.getElementById("r3").style.color = "red";
+}
+
+// Final Score
+document.getElementById("result").innerHTML = 
+"Total Score : " + score + " / 3";
+</script>
+</body>
+</html>
