@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>html</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        p{
+            text-align: left;
+            margin-left: 100;
+        }
+        .Next{
+            text-align: left;
+            margin-left: 260;
+        }
+        button{
+            background-color: skyblue;
+        }
+    </style>
+    <body>
+        <div class="form-box">
+            <center>
+                <h1>TEST</h1>
+                <h2>Question 2</h2>
+                <label>How many months in year ?</label>
+                <p>
+                <input type="radio" name="q2" value="(a)10">(a)10<br>
+                <input type="radio" name="q2" value="(b)20">(b)20<br>
+                <input type="radio" name="q2" value="(c)15">(c)15<br>
+                <input type="radio" name="q2" value="(d)12">(d)12<br>
+                </p>
+                </center>
+                <button onclick="back()" class="Back">BACK</button>
+            <button onclick="next()" class="Next">NEXT</button>
+ 
+
+        </div>
+        <script>
+            function back(){
+                window.location.href="q1.html"
+            }
+            function next(){
+             let ans = document.querySelector('input[name="q2"]:checked');
+
+            if(ans){
+              sessionStorage.setItem("q2", ans.value);
+              window.location.href = "q3.html";
+            } else {
+              alert("Please select an option");
+    }
+}
+        </script>
+    </body>
