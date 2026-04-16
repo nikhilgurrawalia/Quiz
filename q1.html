@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>html</title>
+    </head>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+        }
+        .form-box {
+            width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        p{
+            text-align: left;
+            margin-left: 100;
+        }
+        button{
+            text-align: left;
+            margin-left: 300;
+            background-color: skyblue;
+        }
+    </style>
+    <body>
+        <div class="form-box">
+            <center>
+                <h1>TEST</h1>
+                <h2>Question 1</h2>
+                <label>How many days in year ?</label>
+                <p>
+                <input type="radio" name="q1" value="(a)340">(a)340<br>
+                <input type="radio" name="q1" value="(b)360">(b)360<br>
+                <input type="radio" name="q1" value="(c)365">(c)365<br>
+                <input type="radio" name="q1" value="(d)350">(d)350<br>
+                </p>
+                </center>
+            <button onclick="next()">NEXT</button>
+ 
+
+        </div>
+        <script>
+            function next(){
+           let ans = document.querySelector('input[name="q1"]:checked');
+
+        if(ans){
+           sessionStorage.setItem("q1", ans.value);
+           window.location.href = "q2.html";
+        } else {
+           alert("Please select an option");
+    }
+}
+            
+        </script>
+    </body>
+</html>
